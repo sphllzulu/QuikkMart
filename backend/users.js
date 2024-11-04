@@ -11,13 +11,14 @@ const userSchema= mongoose.Schema({
             return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(value)
         }
     },
+    name: { type: String, required: true },
     role: {
         type: String,
         enum: ['user', 'admin'],
         default: 'user'
     }
     
-})
+}, { timestamps: true });
 
 userSchema.pre('save', async function(next){
     if(!this.isModified('password'))
