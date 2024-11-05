@@ -501,11 +501,11 @@ import {
   Alert
 } from '@mui/material';
 import LockIcon from '@mui/icons-material/Lock';
-
+import 'dotenv';
 import AppHeader from './AppHeader';
 
 // Replace with your Stripe publishable key
-const stripePromise = loadStripe('pk_test_51PuTr7LOTigiMrGc4kJLk7Qkg7DeJn4I7yopiOdsLpprbiw7QCTKvztnOZrREYH6YQ75ELZz15tblpYpGUvpP3AG00TB1uLG3e');
+const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_KEY);
 
 const CARD_ELEMENT_OPTIONS = {
   style: {
