@@ -85,7 +85,7 @@ import { useNavigate } from 'react-router-dom';
 const CartPage = () => {
   const dispatch = useDispatch();
   const { items, loading } = useSelector((state) => state.cart);
-  const navigate = useNavigate
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(fetchCart());
@@ -105,9 +105,12 @@ const CartPage = () => {
     dispatch(clearCart());
   };
 
-  const handleCheckout=()=>{
-    navigate('/checkout')
-  }
+  // const handleCheckout=()=>{
+  //   navigate('/checkout')
+  // }
+  const handleCheckout = () => {
+    navigate('/checkout');
+  };
 
   const cartTotal = useMemo(() => {
     return items.reduce((total, item) => {

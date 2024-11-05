@@ -929,6 +929,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import AppHeader from './AppHeader';
+import ImageCarousel from './Carousel';
 
 const LandingPage = () => {
   const dispatch = useDispatch();
@@ -951,6 +952,8 @@ const LandingPage = () => {
     category: '',
     createdBy: ''
   });
+
+  const image = "https://images.unsplash.com/photo-1500840216050-6ffa99d75160?q=80&w=1497&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 
   useEffect(() => {
     dispatch(fetchProducts());
@@ -1090,6 +1093,7 @@ const LandingPage = () => {
   return (
     <div>
       <AppHeader />
+      <ImageCarousel image={image} altText="Product Image" />
       <Box sx={{ p: 4 }}>
         <Grid container spacing={3}>
           {products.map((product) => (
@@ -1135,13 +1139,13 @@ const LandingPage = () => {
                             onClick={() => handleOpen(product)} 
                             color="primary"
                           >
-                            <EditIcon />
+                            <EditIcon sx={{color:'grey'}} />
                           </IconButton>
                           <IconButton 
                             onClick={() => handleDelete(product._id)} 
                             color="secondary"
                           >
-                            <DeleteIcon />
+                            <DeleteIcon sx={{color:'grey'}} />
                           </IconButton>
                         </>
                       )}
@@ -1195,7 +1199,7 @@ const LandingPage = () => {
               top: '50%',
               left: '50%',
               transform: 'translate(-50%, -50%)',
-              width: 400,
+              width: '80%',
               bgcolor: 'background.paper',
               p: 4,
               borderRadius: 2,
