@@ -4,6 +4,10 @@ Beauty Mart is a full-stack e-commerce marketplace application specialized in be
 ## Design
 Click link to see my design: https://www.figma.com/design/7BJheBlaABDNq7b4kDv759/Beauty-Mart?node-id=0-1&t=xPylSp4BANMSfG61-1
 
+## Deployment links
+Backend-https://quikk-mart-jbcc.vercel.app/
+Frontend-https://quikk-mart-jry8.vercel.app/
+
 ## 🌟 Features
 
 ### User Features
@@ -46,8 +50,8 @@ Click link to see my design: https://www.figma.com/design/7BJheBlaABDNq7b4kDv759
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/your-username/beauty-mart.git
-cd beauty-mart
+git clone https://github.com/sphllzulu/QuikkMart.git
+cd QuikMart
 ```
 
 2. Install backend dependencies:
@@ -58,13 +62,13 @@ npm install
 
 3. Install frontend dependencies:
 ```bash
-cd frontend
+cd frontend/QuikMart
 npm install
 ```
 
 4. Create a `.env` file in the backend directory with the following variables:
 ```env
-PORT=8000
+PORT=3000
 MONGO_URI=your_mongodb_connection_string
 SESSION_SECRET=your_session_secret
 ```
@@ -74,18 +78,18 @@ SESSION_SECRET=your_session_secret
 1. Start the backend server:
 ```bash
 cd backend
-npm start
+npm run dev
 ```
 
 2. Start the frontend development server:
 ```bash
-cd frontend
+cd frontend/QuikMart
 npm run dev
 ```
 
 The application will be available at:
 - Frontend: `http://localhost:5173`
-- Backend API: `http://localhost:8000`
+- Backend API: `http://localhost:3000`
 
 ## 🔒 API Security
 
@@ -151,7 +155,6 @@ The application will be available at:
 ## 🛣 Future Enhancements
 
 1. Features:
-   - Advanced search and filtering
    - Payment gateway integration
    - Order management system
    - User reviews and ratings
@@ -164,19 +167,7 @@ The application will be available at:
    - Email notifications
    - Social media integration
 
-## 📜 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 👥 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the project
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
 
 ## ✍️ Authors
 
