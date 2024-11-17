@@ -5,12 +5,13 @@ import "dotenv/config";
 import mongoose from "mongoose";
 import session from "express-session";
 import MongoStore from 'connect-mongo';
-import Users from "./users.js";
+import Users from "../users.js";
 import validator from "validator";
 import bcrypt from 'bcrypt';
 import cors from 'cors';
-import Product from './products.js';
-import Cart from './cart.js';
+import Product from '../products.js';
+import Cart from '../cart.js';
+import serverless from "serverless-http"
 
 const PORT = process.env.PORT || 8000;
 const server = express();
@@ -280,12 +281,15 @@ router.delete('/cart/clear', isAuthenticated, async (req, res) => {
 });
 
 
-mongoose.connect(process.env.MONGO_URI)
-    .then(() => {
-        server.listen(PORT, () => {
-            console.log(`Server running on port ${PORT}`);
-        });
-    })
-    .catch((error) => {
-        console.error(error);
-    });
+// mongoose.connect(process.env.MONGO_URI)
+//     .then(() => {
+//         server.listen(PORT, () => {
+//             console.log(`Server running on port ${PORT}`);
+//         });
+//     })
+//     .catch((error) => {
+//         console.error(error);
+//     });
+
+mongoose.connect(process.env.MONGO_URI).catch((error) => console.error(error));
+export default serverless(server);
