@@ -15,13 +15,8 @@ const PORT = process.env.PORT || 8000;
 const server = express();
 const router = express.Router();
 
-// server.use(cors());
-server.use(cors({
-    origin: process.env.NODE_ENV === 'production' 
-        ? 'https://your-frontend-domain.com'  
-        : 'http://localhost:5173',
-    credentials: true
-}));
+server.use(cors());
+
 // server.use(cors({
 //     origin: 'http://localhost:5173', // Your Vite frontend URL
 //     credentials: true // Enable credentials (cookies, authorization headers, etc)
