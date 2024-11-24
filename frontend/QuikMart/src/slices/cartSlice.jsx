@@ -9,27 +9,27 @@ const initialState = {
 };
 
 export const fetchCart = createAsyncThunk('cart/fetchCart', async () => {
-  const response = await axios.get('http://localhost:3000/cart', { withCredentials: true });
+  const response = await axios.get('https://quikkmart.onrender.com/cart', { withCredentials: true });
   return response.data;
 });
 
 export const addToCart = createAsyncThunk('cart/addToCart', async (item) => {
-  const response = await axios.post('http://localhost:3000/cart/add', item, { withCredentials: true });
+  const response = await axios.post('https://quikkmart.onrender.com/cart/add', item, { withCredentials: true });
   return response.data;
 });
 
 export const updateCartItem = createAsyncThunk('cart/updateCartItem', async (item) => {
-  const response = await axios.put('http://localhost:3000/cart/update', item, { withCredentials: true });
+  const response = await axios.put('https://quikkmart.onrender.com/cart/update', item, { withCredentials: true });
   return response.data;
 });
 
 export const removeFromCart = createAsyncThunk('cart/removeFromCart', async (productId) => {
-  const response = await axios.delete(`http://localhost:3000/cart/remove/${productId}`, { withCredentials: true });
+  const response = await axios.delete(`https://quikkmart.onrender.com/cart/remove/${productId}`, { withCredentials: true });
   return response.data;
 });
 
 export const clearCart = createAsyncThunk('cart/clearCart', async () => {
-  const response = await axios.delete('http://localhost:3000/cart/clear', { withCredentials: true });
+  const response = await axios.delete('https://quikkmart.onrender.com/cart/clear', { withCredentials: true });
   return response.data;
 });
 

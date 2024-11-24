@@ -4,25 +4,25 @@ import axios from 'axios';
 
 // Fetch products
 export const fetchProducts = createAsyncThunk('products/fetchProducts', async () => {
-  const response = await axios.get('http://localhost:3000/products');
+  const response = await axios.get('https://quikkmart.onrender.com/products');
   return response.data;
 });
 
 // Add a new product
 export const addProduct = createAsyncThunk('products/addProduct', async (productData) => {
-  const response = await axios.post('http://localhost:3000/products', productData, { withCredentials: true });
+  const response = await axios.post('https://quikkmart.onrender.com/products', productData, { withCredentials: true });
   return response.data;
 });
 
 // Edit a product
 export const editProduct = createAsyncThunk('products/editProduct', async ({ id, productData }) => {
-  const response = await axios.put(`http://localhost:3000/products/${id}`, productData, { withCredentials: true });
+  const response = await axios.put(`https://quikkmart.onrender.com/products/${id}`, productData, { withCredentials: true });
   return response.data;
 });
 
 // Delete a product
 export const deleteProduct = createAsyncThunk('products/deleteProduct', async (id) => {
-  await axios.delete(`http://localhost:3000/products/${id}`, { withCredentials: true });
+  await axios.delete(`https://quikkmart.onrender.com/products/${id}`, { withCredentials: true });
   return id;
 });
 

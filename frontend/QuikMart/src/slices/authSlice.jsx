@@ -3,7 +3,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const API_URL = 'http://localhost:3000';
+const API_URL = 'https://quikkmart.onrender.com';
 
 // Get user from localStorage on initial load
 const getUserFromStorage = () => {
