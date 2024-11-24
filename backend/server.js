@@ -1,23 +1,25 @@
-
-
 import express from "express";
 import "dotenv/config";
 import mongoose from "mongoose";
 import session from "express-session";
 import MongoStore from 'connect-mongo';
-import Users from "../users.js";
+import Users from "./users.js";
 import validator from "validator";
 import bcrypt from 'bcrypt';
 import cors from 'cors';
-import Product from '../products.js';
-import Cart from '../cart.js';
-import serverless from "serverless-http"
+import Product from './products.js';
+import Cart from './cart.js';
+// import serverless from "serverless-http"
 
 const PORT = process.env.PORT || 8000;
 const server = express();
 const router = express.Router();
 
 server.use(cors());
+// server.use(cors({
+//     origin: 'http://localhost:5173', // Your Vite frontend URL
+//     credentials: true // Enable credentials (cookies, authorization headers, etc)
+// }));
 
 server.use(express.json());
 
@@ -281,15 +283,15 @@ router.delete('/cart/clear', isAuthenticated, async (req, res) => {
 });
 
 
-// mongoose.connect(process.env.MONGO_URI)
-//     .then(() => {
-//         server.listen(PORT, () => {
-//             console.log(`Server running on port ${PORT}`);
-//         });
-//     })
-//     .catch((error) => {
-//         console.error(error);
-//     });
+mongoose.connect(process.env.MONGO_URI)
+    .then(() => {
+        server.listen(PORT, () => {
+            console.log(`Server running on port ${PORT}`);
+        });
+    })
+    .catch((error) => {
+        console.error(error);
+    });
 
-mongoose.connect(process.env.MONGO_URI).catch((error) => console.error(error));
-export default serverless(server);
+// mongoose.connect(process.env.MONGO_URI).catch((error) => console.error(error));
+// export default serverless(server);
