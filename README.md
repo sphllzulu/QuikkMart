@@ -5,8 +5,7 @@ Beauty Mart is a full-stack e-commerce marketplace application specialized in be
 Click link to see my design: https://www.figma.com/design/7BJheBlaABDNq7b4kDv759/Beauty-Mart?node-id=0-1&t=xPylSp4BANMSfG61-1
 
 ## Deployment links
-Backend-https://quikk-mart-jbcc.vercel.app/
-Frontend-https://quikk-mart-jry8.vercel.app/
+https://quikkmart-1.onrender.com
 
 ## 🌟 Features
 
