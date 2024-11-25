@@ -15,12 +15,12 @@ const PORT = process.env.PORT || 8000;
 const server = express();
 const router = express.Router();
 
-server.use(cors());
+// server.use(cors());
 
-// server.use(cors({
-//     origin: 'http://localhost:5173', // Your Vite frontend URL
-//     credentials: true // Enable credentials (cookies, authorization headers, etc)
-// }));
+server.use(cors({
+    origin: 'https://quikkmart-1.onrender.com', 
+    credentials: true // Enable credentials (cookies, authorization headers, etc)
+}));
 
 server.use(express.json());
 
